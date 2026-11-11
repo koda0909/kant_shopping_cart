@@ -73,6 +73,21 @@ class Cart:
         print(f"{'최종 결제 금액':<10} {self.total():>15,}원")
         print(line)
 
+    def checkout(self):
+        if self.is_empty(): return
+
+        self.show()
+        # 재고 감소 처리
+        for p, q in self.items.items():
+            p.stock -= q
+
+
+        # 장바구니 비우기
+        self.items.clear()
+
+        # 결제 성공 여부 SKIP
+        print("결제가 완료되었습니다. 감사합니다!")
+
 
 
 # --------------------------------------------
@@ -84,12 +99,9 @@ earphone = Product("무선 이어폰", 89_000, 3)
 
 # 카트 인스턴스 생성
 cart = Cart()
-cart.show()
-cart.add(tumbler, 1)
-cart.show()
+cart.add(tumbler, 3)
 cart.add(earphone, 2)
-cart.show()
+cart.checkout()
 
-
-
-
+print(tumbler)
+print(earphone)
