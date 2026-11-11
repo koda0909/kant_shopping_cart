@@ -21,12 +21,13 @@ class Product:
 # --------------------------------------------
 # 테스트 코드
 # --------------------------------------------
-products = [
-    Product("무선 이어폰", 80_000, 3),
-    Product("텀블러", 30_000, 10),
-    Product("보조배터리", 32_000, 5),
-    Product("마우스 패드", 9_000, 0),
-    Product("USB 허브", 30_000, 10)
-]
+if __name__ == "__main__":
+    products = [
+        Product("무선 이어폰", 80_000, 3),
+        Product("텀블러", 30_000, 10),
+        Product("보조배터리", 32_000, 5),
+        Product("마우스 패드", 9_000, 0),
+        Product("USB 허브", 30_000, 10)
+    ]
 
-for p in products: print(p)
+    for p in products: print(p)
